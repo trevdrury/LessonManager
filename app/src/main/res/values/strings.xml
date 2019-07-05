@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Lesson Manager</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="text_lessons">Lessons</string>
+    <string name="text_students">Students</string>
+    <string name="text_payments">Payments</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="lessons_fragment">Lessons</string>
+
+    <string-array name="day_array">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2F252525</color>
+    <color name="colorPrimaryLight">#cccccc</color>
+    <color name="colorPrimaryDark">#151515</color>
+    <color name="colorAccent">#00a9a5</color>
+    <color name="colorAccentDark">#e4572e</color>
+
+    <color name="background_light">#1e1e1e</color>
+    <color name="background_dark">#151515</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="high_emphasis_text">#DEFFFFFF</color>
+    <color name="med_emphasis_text">#99FFFFFF</color>
+    <color name="alpha_white">#88FFFFFF</color>
+
+    <color name="warning">#DB3A34</color>
+    <color name="edit">#383838</color>
+</resources>
