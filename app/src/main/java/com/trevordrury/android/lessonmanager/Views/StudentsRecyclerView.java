@@ -11,24 +11,19 @@ public class StudentsRecyclerView extends androidx.recyclerview.widget.RecyclerV
     private View emptyView;
 
     private AdapterDataObserver dataObserver = new AdapterDataObserver() {
-
         @Override
         public void onChanged() {
             updateEmptyView();
         }
     };
 
-    public StudentsRecyclerView(Context context) {
-        super(context);
-    }
+    public StudentsRecyclerView(Context context) { super(context); }
 
     public StudentsRecyclerView(Context context, AttributeSet attrs) {
         super(context,attrs);
     }
 
-    public StudentsRecyclerView(Context context, AttributeSet attrs, int defStyle) {
-        super(context,attrs,defStyle);
-    }
+    public StudentsRecyclerView(Context context, AttributeSet attrs, int defStyle) { super(context,attrs,defStyle); }
 
     public void setEmptyView(View emptyView) {
         this.emptyView = emptyView;
@@ -45,8 +40,6 @@ public class StudentsRecyclerView extends androidx.recyclerview.widget.RecyclerV
         super.setAdapter(adapter);
         updateEmptyView();
     }
-
-
 
     private void updateEmptyView() {
         if (emptyView != null && getAdapter() != null) {

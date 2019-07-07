@@ -24,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        Fragment lessonsFragment = LessonsFragment.newInstance();
+        transaction.replace(R.id.fragment_container, lessonsFragment);
+        transaction.commit();
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener

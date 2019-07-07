@@ -4,13 +4,13 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
 import com.trevordrury.android.lessonmanager.data.StudentBaseHelper;
 import com.trevordrury.android.lessonmanager.data.StudentCursorWrapper;
 import com.trevordrury.android.lessonmanager.data.StudentDbSchema;
-
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
 
 public class StudentProvider {
@@ -91,6 +91,18 @@ public class StudentProvider {
                 StudentDbSchema.StudentTable.Cols.UUID + " = ?",
                 new String[] {uuidString});
 
+    }
+
+    public List<Student> getCurrentLessons(List<Student> students) {
+        List<Student> todayStudents = new ArrayList<>();
+        final Calendar c = Calendar.getInstance();
+        String day = c.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.getDefault());
+        for (Student student : students) {
+            if (student.getLessonDay().equals(day)) {
+                todayStudents.add(student);
+            }
+        }
+        return todayStudents;
     }
 
     private StudentCursorWrapper queryStudents(String whereClause, String[] whereArgs) {

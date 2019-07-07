@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.trevordrury.android.lessonmanager.R;
+import com.trevordrury.android.lessonmanager.Views.LessonAdapter;
 import com.trevordrury.android.lessonmanager.Views.LessonsRecyclerView;
 import com.trevordrury.android.lessonmanager.Views.StudentAdapter;
 import com.trevordrury.android.lessonmanager.model.Student;
@@ -21,7 +22,7 @@ import java.util.List;
 public class LessonsFragment extends Fragment {
 
     private LessonsRecyclerView lessonsRecyclerView;
-    private StudentAdapter adapter;
+    private LessonAdapter adapter;
 
     public static LessonsFragment newInstance() {
         return new LessonsFragment();
@@ -55,12 +56,13 @@ public class LessonsFragment extends Fragment {
     private void updateUI() {
         StudentProvider studentProvider = StudentProvider.get(getActivity());
         List<Student> students = studentProvider.getStudents();
+        List<Student> lessons = studentProvider.getCurrentLessons(students);
 
         if (lessonsRecyclerView.getAdapter() == null) {
-            adapter = new StudentAdapter(students);
+            adapter = new LessonAdapter(lessons);
             lessonsRecyclerView.setAdapter(adapter);
         } else {
-            adapter.setStudents(students);
+            adapter.setStudents(lessons);
             adapter.notifyDataSetChanged();
         }
     }
