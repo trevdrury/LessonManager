@@ -111,7 +111,7 @@ public class AddStudentFragment extends Fragment {
                 student = new Student();
                 student.setStudentName(studentNameField.getText().toString());
                 student.setStudioName(studioNameField.getText().toString());
-                student.setStudentInstrument(studentInstrumentField.getText().toString());
+                student.setStudentInstrument(studentInstrumentField.getText().toString().toLowerCase());
                 student.setLessonDay(lessonDayField.getText().toString());
                 student.setLessonTime(lessonTimeField.getText().toString());
                 student.setPhone(studentPhoneField.getText().toString());
